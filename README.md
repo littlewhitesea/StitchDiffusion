@@ -1,10 +1,6 @@
 # StitchDiffusion
 This is the official implementation of "Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models"
 
-<a target="_blank" href="https://colab.research.google.com/github/littlewhitesea/StitchDiffusion/blob/main/StitchDiffusion_360_Panorama.ipynb">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-</a>
-
 ### [Paper] | [[Data]](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link)
 
 ## Acknowledgments
