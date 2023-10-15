@@ -3,7 +3,7 @@ This is the official implementation of "Customizing 360-Degree Panoramas through
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/littlewhitesea/StitchDiffusion/blob/main/StitchDiffusion_360_Panorama.ipynb)
 
-### [Paper] | [[Data]](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link)
+### [Paper] | [[Data]](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link) | [[Colab]](https://github.com/littlewhitesea/StitchDiffusion/blob/main/StitchDiffusion_360_Panorama.ipynb) 
 
 ## Useful Tools
 
