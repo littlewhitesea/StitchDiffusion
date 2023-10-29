@@ -1,6 +1,8 @@
 # StitchDiffusion (Keep Update)
 This is the official implementation of "Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models"
 
+By [Hai Wang](https://littlewhitesea.github.io/), [Xiaoyu Xiang](https://engineering.purdue.edu/people/xiaoyu.xiang.1), [Yuchen Fan](https://ychfan.github.io/), [Jing-Hao Xue](https://www.homepages.ucl.ac.uk/~ucakjxu/)
+
 [![Project](https://img.shields.io/badge/Project-Website-orange)](https://littlewhitesea.github.io/stitchdiffusion.github.io/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/littlewhitesea/StitchDiffusion/blob/main/StitchDiffusion_360_Panorama.ipynb)
 
