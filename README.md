@@ -10,7 +10,9 @@ By [Hai Wang](https://littlewhitesea.github.io/), [Xiaoyu Xiang](https://enginee
 
 ## Useful Tools
 
-[360 panoramic images viewer](https://renderstuff.com/tools/360-panorama-web-viewer/) and [Seamless Texture Checker](https://www.pycheung.com/checker/)
+[360 panoramic images viewer](https://renderstuff.com/tools/360-panorama-web-viewer/): It could be used to view the synthesized 360-degree panorama.
+
+[Seamless Texture Checker](https://www.pycheung.com/checker/): It could be employed to check the continuity between the leftmost and rightmost sides of the generated image. 
 
 
 ## Acknowledgments
