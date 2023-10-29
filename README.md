@@ -14,6 +14,12 @@ By [Hai Wang](https://littlewhitesea.github.io/), [Xiaoyu Xiang](https://enginee
 
 [Seamless Texture Checker](https://www.pycheung.com/checker/): It could be employed to check the continuity between the leftmost and rightmost sides of the generated image. 
 
+## Citation
+If you find the code helpful in your research or work, please cite our paper:
+```Bibtex
+BibTex code here
+```
+
 
 ## Acknowledgments
 We thank [MultiDiffusion](https://github.com/omerbt/MultiDiffusion) and [Kohya Trainer](https://github.com/Linaqruf/kohya-trainer). Our work is based on their excellent codes.
