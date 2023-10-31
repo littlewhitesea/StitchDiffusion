@@ -7,7 +7,7 @@ By [Hai Wang](https://littlewhitesea.github.io/), [Xiaoyu Xiang](https://enginee
 [![Project](https://img.shields.io/badge/Project-Website-orange)](https://littlewhitesea.github.io/stitchdiffusion.github.io/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/littlewhitesea/StitchDiffusion/blob/main/StitchDiffusion_360_Panorama.ipynb)
 
-### Paper | [Data](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link) | [Colab](https://colab.research.google.com/github/littlewhitesea/StitchDiffusion/blob/main/StitchDiffusion_360_Panorama.ipynb) 
+### [Paper](https://arxiv.org/pdf/2310.18840.pdf) | [Data](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link) | [Colab](https://colab.research.google.com/github/littlewhitesea/StitchDiffusion/blob/main/StitchDiffusion_360_Panorama.ipynb) 
 
 ## Introduction
 
