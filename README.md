@@ -22,7 +22,14 @@ Personalized text-to-image (T2I) synthesis based on diffusion models has attract
 ## Citation
 If you find the code helpful in your research or work, please cite our paper:
 ```Bibtex
-BibTex code here
+@misc{wang2023customizing,
+      title={Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models}, 
+      author={Hai Wang and Xiaoyu Xiang and Yuchen Fan and Jing-Hao Xue},
+      year={2023},
+      eprint={2310.18840},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
 ```
 
 
