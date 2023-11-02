@@ -4,7 +4,7 @@ Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models \
 
 [![Project](https://img.shields.io/badge/Project-Website-orange)](https://littlewhitesea.github.io/stitchdiffusion.github.io/)
 
-### Paper | [Data](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link) | Colab
+### Paper | [Data](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link)
 
 ## Introduction
 
