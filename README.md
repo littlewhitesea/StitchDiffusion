@@ -18,6 +18,10 @@ Personalized text-to-image (T2I) synthesis based on diffusion models has attract
 
 [Seamless Texture Checker](https://www.pycheung.com/checker/): It could be employed to check the continuity between the leftmost and rightmost sides of the generated image. 
 
+## Statement
+
+This work is totally completed by Hai Wang in University College London.
+
 ## Citation
 If you find the code helpful in your research or work, please cite our paper:
 ```Bibtex
