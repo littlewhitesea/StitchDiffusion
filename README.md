@@ -2,11 +2,9 @@
 Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models \
 [Hai Wang](https://littlewhitesea.github.io/), [Xiaoyu Xiang](https://engineering.purdue.edu/people/xiaoyu.xiang.1), [Yuchen Fan](https://ychfan.github.io/), [Jing-Hao Xue](https://www.homepages.ucl.ac.uk/~ucakjxu/)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2310.18840-b31b1b.svg)](https://arxiv.org/abs/2310.18840)
 [![Project](https://img.shields.io/badge/Project-Website-orange)](https://littlewhitesea.github.io/stitchdiffusion.github.io/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/littlewhitesea/StitchDiffusion/blob/main/StitchDiffusion_360_Panorama.ipynb)
 
-### [Paper](https://arxiv.org/pdf/2310.18840.pdf) | [Data](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link) | [Colab](https://colab.research.google.com/github/littlewhitesea/StitchDiffusion/blob/main/StitchDiffusion_360_Panorama.ipynb) 
+### [Paper](https://arxiv.org/pdf/2310.18840.pdf) | [Data](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link) | Colab
 
 ## Introduction
 
