@@ -8,9 +8,27 @@ Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models \
 
 ### [Data](https://drive.google.com/file/d/1Iq1cRqhggrf8zWf4fHwf2hxkpNVw4kdF/view?usp=drive_link) | [Pretrained Model](https://drive.google.com/file/d/1MiaG8v0ZmkTwwrzIEFtVoBj-Jjqi_5lz/view?usp=sharing)
 
-## Introduction
+## StitchDiffusion Code
+```python
+## following MultiDiffusion: https://github.com/omerbt/MultiDiffusion/blob/master/panorama.py ##
+## the window size is changed for 360-degree panorama generation ##
+def get_views(panorama_height, panorama_width, window_size=[64,128], stride=16):
+    panorama_height /= 8
+    panorama_width /= 8
+    num_blocks_height = (panorama_height - window_size[0]) // stride + 1
+    num_blocks_width = (panorama_width - window_size[1]) // stride + 1
+    total_num_blocks = int(num_blocks_height * num_blocks_width)
+    views = []
+    for i in range(total_num_blocks):
+        h_start = int((i // num_blocks_width) * stride)
+        h_end = h_start + window_size[0]
+        w_start = int((i % num_blocks_width) * stride)
+        w_end = w_start + window_size[1]
+        views.append((h_start, h_end, w_start, w_end))
+    return views
 
-Personalized text-to-image (T2I) synthesis based on diffusion models has attracted significant attention in recent research. However, existing methods primarily concentrate on customizing subjects or styles, neglecting the exploration of global geometry. In this study, we propose an approach that focuses on the customization of 360-degree panoramas, which inherently possess global geometric properties, using a T2I diffusion model. To achieve this, we curate a paired image-text dataset specifically designed for the task and subsequently employ it to fine-tune a pre-trained T2I diffusion model with LoRA. Nevertheless, the fine-tuned model alone does not ensure the continuity between the leftmost and rightmost sides of the synthesized images, a crucial characteristic of 360-degree panoramas. To address this issue, we propose a method called StitchDiffusion. Specifically, we perform pre-denoising operations twice at each time step of the denoising process on the stitch block consisting of the leftmost and rightmost image regions. Furthermore, a global cropping is adopted to synthesize seamless 360-degree panoramas. Experimental results demonstrate the effectiveness of our customized model combined with the proposed StitchDiffusion in generating high-quality 360-degree panoramic images. Moreover, our customized model exhibits exceptional generalization ability in producing scenes unseen in the fine-tuning dataset.
+
+```
 
 ## Useful Tools
 
