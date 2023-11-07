@@ -22,4 +22,4 @@ Personalized text-to-image (T2I) synthesis based on diffusion models has attract
 This research was done by Hai Wang in University College London. The code and released models are owned by Hai Wang.
 
 ## Acknowledgments
-We thank [MultiDiffusion](https://github.com/omerbt/MultiDiffusion) and [Kohya Trainer](https://github.com/Linaqruf/kohya-trainer). Our work is based on their excellent codes.
+We thank [MultiDiffusion](https://github.com/omerbt/MultiDiffusion). Our work is based on their excellent codes.
