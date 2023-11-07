@@ -22,5 +22,10 @@ TBD
 ## Statement
 This research was done by Hai Wang in University College London. The code and released models are owned by Hai Wang.
 
+## Citation
+If you find the code helpful in your research or work, please cite our paper:
+```Bibtex
+TBD
+```
 ## Acknowledgments
 We thank [MultiDiffusion](https://github.com/omerbt/MultiDiffusion). Our work is based on their excellent codes.
