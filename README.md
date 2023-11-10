@@ -11,7 +11,7 @@ Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models \
 
 ## StitchDiffusion Code
 
-Since StitchDiffusion is a tailored generation process for synthesizing 360-degree panoramas, we provide its core code in the following.
+Since StitchDiffusion is a tailored generation (denoising) process for synthesizing 360-degree panoramas, we provide its core code in the following.
 
 ```python
 ## following MultiDiffusion: https://github.com/omerbt/MultiDiffusion/blob/master/panorama.py ##
