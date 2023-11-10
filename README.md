@@ -91,7 +91,7 @@ for i, t in enumerate(tqdm(timesteps)):
         noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_text - noise_pred_uncond)
 
         # compute the denoising step with the reference (customized) model
-        latent_view_denoised = self.scheduler.step(noise_pred, t, latent_view_t, **extra_step_kwargs)['prev_sample']
+        latent_view_denoised = self.scheduler.step(noise_pred, t, latent_view_t)['prev_sample']
         value_t[:, :, h_start:h_end, w_start:w_end] += latent_view_denoised
         count_t[:, :, h_start:h_end, w_start:w_end] += 1
 
