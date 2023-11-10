@@ -14,7 +14,22 @@ Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models \
 Since StitchDiffusion is a tailored generation process for synthesizing 360-degree panoramas, we provide its core code in the following.
 
 ```python
-TBD
+## following MultiDiffusion: https://github.com/omerbt/MultiDiffusion/blob/master/panorama.py ##
+## the window size is changed for 360-degree panorama generation ##
+def get_views(panorama_height, panorama_width, window_size=[64,128], stride=16):
+    panorama_height /= 8
+    panorama_width /= 8
+    num_blocks_height = (panorama_height - window_size[0]) // stride + 1
+    num_blocks_width = (panorama_width - window_size[1]) // stride + 1
+    total_num_blocks = int(num_blocks_height * num_blocks_width)
+    views = []
+    for i in range(total_num_blocks):
+        h_start = int((i // num_blocks_width) * stride)
+        h_end = h_start + window_size[0]
+        w_start = int((i % num_blocks_width) * stride)
+        w_end = w_start + window_size[1]
+        views.append((h_start, h_end, w_start, w_end))
+    return views
 ```
 
 ## Useful Tools
