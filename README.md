@@ -33,80 +33,80 @@ def get_views(panorama_height, panorama_width, window_size=[64,128], stride=16):
 ```
 
 ```python
-        #####################
-        ## StitchDiffusion ##
-        #####################
+#####################
+## StitchDiffusion ##
+#####################
 
-        views_t = get_views(height, width) # height = 512; width = 4*height = 2048
-        count_t = torch.zeros_like(latents)
-        value_t = torch.zeros_like(latents)
-        # latents are sampled from standard normal distribution (torch.randn()) with a size of Bx4x64x256,
-        # where B denotes the batch size.
+views_t = get_views(height, width) # height = 512; width = 4*height = 2048
+count_t = torch.zeros_like(latents)
+value_t = torch.zeros_like(latents)
+# latents are sampled from standard normal distribution (torch.randn()) with a size of Bx4x64x256,
+# where B denotes the batch size.
 
-        for i, t in enumerate(tqdm(timesteps)):
+for i, t in enumerate(tqdm(timesteps)):
 
-            count_t.zero_()
-            value_t.zero_()
+    count_t.zero_()
+    value_t.zero_()
 
-            # initialize the value of latent_view_t
-            latent_view_t = latents[:, :, :, 64:192]
+    # initialize the value of latent_view_t
+    latent_view_t = latents[:, :, :, 64:192]
 
-            #### pre-denoising operations twice on the stitch block ####
-            for ii_md in range(2):
+    #### pre-denoising operations twice on the stitch block ####
+    for ii_md in range(2):
 
-                latent_view_t[:, :, :, 0:64] = latents[:, :, :, 192:256] #left part of the stitch block
-                latent_view_t[:, :, :, 64:128] = latents[:, :, :, 0:64] #right part of the stitch block
+        latent_view_t[:, :, :, 0:64] = latents[:, :, :, 192:256] #left part of the stitch block
+        latent_view_t[:, :, :, 64:128] = latents[:, :, :, 0:64] #right part of the stitch block
 
-                # expand the latents if we are doing classifier free guidance
-                latent_model_input = latent_view_t.repeat((2, 1, 1, 1))
+        # expand the latents if we are doing classifier free guidance
+        latent_model_input = latent_view_t.repeat((2, 1, 1, 1))
 
-                # # predict the noise residual
-                noise_pred = self.unet(latent_model_input, t, encoder_hidden_states=text_embeddings)['sample']
+        # # predict the noise residual
+        noise_pred = self.unet(latent_model_input, t, encoder_hidden_states=text_embeddings)['sample']
 
-                # perform guidance
-                noise_pred_uncond, noise_pred_text = noise_pred.chunk(2)
-                noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_text - noise_pred_uncond)
+        # perform guidance
+        noise_pred_uncond, noise_pred_text = noise_pred.chunk(2)
+        noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_text - noise_pred_uncond)
 
-                # compute the denoising step with the reference (customized) model
-                latent_view_denoised = self.scheduler.step(noise_pred, t, latent_view_t)['prev_sample']
+        # compute the denoising step with the reference (customized) model
+        latent_view_denoised = self.scheduler.step(noise_pred, t, latent_view_t)['prev_sample']
 
-                value_t[:, :, :, 192:256] += latent_view_denoised[:, :, :, 0:64]
-                count_t[:, :, :, 192:256] += 1
+        value_t[:, :, :, 192:256] += latent_view_denoised[:, :, :, 0:64]
+        count_t[:, :, :, 192:256] += 1
 
-                value_t[:, :, :, 0:64] += latent_view_denoised[:, :, :, 64:128]
-                count_t[:, :, :, 0:64] += 1
+        value_t[:, :, :, 0:64] += latent_view_denoised[:, :, :, 64:128]
+        count_t[:, :, :, 0:64] += 1
 
-            # same denoising operations as what MultiDiffusion does
-            for h_start, h_end, w_start, w_end in views_t:
+    # same denoising operations as what MultiDiffusion does
+    for h_start, h_end, w_start, w_end in views_t:
 
-                latent_view_t = latents[:, :, h_start:h_end, w_start:w_end]
-            
-                # expand the latents if we are doing classifier free guidance
-                latent_model_input = latent_view_t.repeat((2, 1, 1, 1))
-                latent_model_input = self.scheduler.scale_model_input(latent_model_input, t)
+        latent_view_t = latents[:, :, h_start:h_end, w_start:w_end]
+    
+        # expand the latents if we are doing classifier free guidance
+        latent_model_input = latent_view_t.repeat((2, 1, 1, 1))
+        latent_model_input = self.scheduler.scale_model_input(latent_model_input, t)
 
-                # predict the noise residual
-                noise_pred = self.unet(latent_model_input, t, encoder_hidden_states=text_embeddings)['sample']
+        # predict the noise residual
+        noise_pred = self.unet(latent_model_input, t, encoder_hidden_states=text_embeddings)['sample']
 
-                #perform guidance
-                noise_pred_uncond, noise_pred_text = noise_pred.chunk(2)
-                noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_text - noise_pred_uncond)
+        #perform guidance
+        noise_pred_uncond, noise_pred_text = noise_pred.chunk(2)
+        noise_pred = noise_pred_uncond + guidance_scale * (noise_pred_text - noise_pred_uncond)
 
-                # compute the denoising step with the reference (customized) model
-                latent_view_denoised = self.scheduler.step(noise_pred, t, latent_view_t, **extra_step_kwargs)['prev_sample']
-                value_t[:, :, h_start:h_end, w_start:w_end] += latent_view_denoised
-                count_t[:, :, h_start:h_end, w_start:w_end] += 1
+        # compute the denoising step with the reference (customized) model
+        latent_view_denoised = self.scheduler.step(noise_pred, t, latent_view_t, **extra_step_kwargs)['prev_sample']
+        value_t[:, :, h_start:h_end, w_start:w_end] += latent_view_denoised
+        count_t[:, :, h_start:h_end, w_start:w_end] += 1
 
-            latents = torch.where(count_t > 0, value_t / count_t, value_t)
+    latents = torch.where(count_t > 0, value_t / count_t, value_t)
 
-        latents = 1 / 0.18215 * latents
-        image = self.vae.decode(latents).sample
-        image = (image / 2 + 0.5).clamp(0, 1)
+latents = 1 / 0.18215 * latents
+image = self.vae.decode(latents).sample
+image = (image / 2 + 0.5).clamp(0, 1)
 
 
-        #### global cropping operation ####
-        image = image[:, :, :, 512:1536]
-        image = image.cpu().permute(0, 2, 3, 1).float().numpy()
+#### global cropping operation ####
+image = image[:, :, :, 512:1536]
+image = image.cpu().permute(0, 2, 3, 1).float().numpy()
 ```
 
 ## Useful Tools
