@@ -1,5 +1,3 @@
-Code will come soon.
-
 # StitchDiffusion (Keep Update)
 Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models \
 [Hai Wang](https://littlewhitesea.github.io/), [Xiaoyu Xiang](https://engineering.purdue.edu/people/xiaoyu.xiang.1), [Yuchen Fan](https://ychfan.github.io/), [Jing-Hao Xue](https://www.homepages.ucl.ac.uk/~ucakjxu/)
