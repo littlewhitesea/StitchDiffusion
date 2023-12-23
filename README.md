@@ -123,13 +123,12 @@ This research was done by Hai Wang in University College London. The code and re
 ## Citation
 If you find the code helpful in your research or work, please cite our paper:
 ```Bibtex
-@misc{wang2023customizing,
-      title={Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models}, 
-      author={Hai Wang and Xiaoyu Xiang and Yuchen Fan and Jing-Hao Xue},
-      year={2023},
-      eprint={2310.18840},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@inproceedings{wang2024customizing,
+  title={Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models},
+  author={Wang, Hai and Xiang, Xiaoyu and Fan, Yuchen and Xue, Jing-Hao},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
+  pages={4933--4943},
+  year={2024}
 }
 ```
 ## Acknowledgments
