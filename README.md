@@ -117,6 +117,10 @@ image = image.cpu().permute(0, 2, 3, 1).float().numpy()
 
 [clip-interrogator](https://github.com/pharmapsychotic/clip-interrogator?tab=readme-ov-file): It contains Google Colab of BLIP to generate text prompts.
 
+[CLIP](https://github.com/OpenAI/CLIP): It contains Google Colab to calculate the CLIP-score.
+
+[FID](https://github.com/GaParmar/clean-fid): It contains Google Colab to calculate FID.
+
 ## Statement
 This research was done by Hai Wang in University College London. The code and released models are owned by Hai Wang.
 
