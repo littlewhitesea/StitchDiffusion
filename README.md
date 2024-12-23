@@ -7,6 +7,7 @@ Customizing 360-Degree Panoramas through Text-to-Image Diffusion Models \
 
 ### [Data](https://drive.google.com/file/d/1EgRwj5BqO7Y-PvdL8mrFwKsqmgN_N4_b/view?usp=sharing) | [Pretrained Model](https://drive.google.com/file/d/1MiaG8v0ZmkTwwrzIEFtVoBj-Jjqi_5lz/view?usp=sharing) | [8K Data](https://drive.google.com/file/d/1RFfLH6zzwsd3rlRRxuN-RtBWv6BsWXMO/view?usp=sharing)
 
+## [[Runnable code]](https://github.com/lshus/stitchdiffusion-colab) based on diffusers was implemented by @[lshus](https://github.com/lshus). 
 [Colab](https://github.com/lshus/stitchdiffusion-colab) was implemented by @[lshus](https://github.com/lshus). 
 
 ## StitchDiffusion Code
